@@ -16,13 +16,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Интегральное исчисление
 						=======================
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Определение первообразной
 						-------------------------
@@ -32,95 +32,220 @@
 
 
 						Интегрирование функции $f(x)$ - это математическая операция по нахождению первообразной $f(x)$
+
+						
 						
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Примеры
+						-------------------------
+
+						$F(x)=5x^3$ - это первообразная для
+						$f(x)=15x^2$, т.к. $F'(x)=(5x^3)'=5 \cdot3x^2=15x^2$
+						
+						Notes: Функция эф большое от икс называется первообразной для функции эф малое от икс на данном промежутке, если
+						для любого икс из данного промежутка F'(x)=f(x)
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Свойства первообразной
 						----------------------
+
+						- Если к первообразной $F(x)$ функции $f(x)$ добавить постоянную $C$, то полученная функция $F(x)+C$ также является первообразной для функции $f(x)$
+
+						- Первообразная суммы равна сумме первообразных
 					</script>
 				</section>
 				
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Неопределенный интеграл. Определение
 						------------------------------------
+
+						Неопределенным интегралом от функции $f(x)$ называется выражение $F(x)+C$, то есть совокупность всех первообразных функции $f(x)$.
+						
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Неопределенный интеграл. Определение
+						------------------------------------
+
+						Обозначается $\int f(x)dx = F(x)+C$, где
+						- $f(x)$ - подынтегральная функция
+						- $f(x)dx$ - подынтегральное выражение
+						- $x$ - переменная интегрирования
+						- $F(x)$ - одна из первообразных функции $f(x)$
+						- $C$ - постоянная
 					</script>
 				</section>
 				
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script id="integral-table">
 						<h2>Таблица интегралов</h2>
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
-						Определенный интеграл. Определение
+						Определенный интеграл. 
 						----------------------------------
+
+						1. Разобём промежуток точками 
+						$x_0=a;  x_1, x_3, \cdots, x_k, x_{k+1}, \cdots, x_n=b$
+						Введем следующее обозначение: $\Delta x_k=x_{k+1}-x_k$ - длина участка разбиения.
+						$\lambda = \sup{ \{ \Delta x_k \}}$ - диаметр разбиения (наибольший из всех длин участков разбиения)
+						
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Определенный интеграл. 
+						----------------------------------
+						2. На каждом частичном участке $\[ x_k; x_{k+1} \]$
+						возьмем произвольную точку $\xi_k$ и вычичслим в ней значение $f( \xi_k )$
+						3. Составим произведение $f(\xi_k) \cdot \Delta x_k$
+						4. Составим сумму $$\sigma_n = \sum_{k=0}^{n-1} f(\xi_k \cdot \Delta x_k)$$
+
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Определенный интеграл. 
+						----------------------------------
+
+						5. Измельчая дробление (зачсчёт увеличения числа точек дробления $n$) 
+						и устремляя при этом диаметр разбиения к нулю ($\lambda \rightarrow 0$),
+						найдем предел последовательности интегральных сумм $$
+						J=\lim_{n \rightarrow \infty, \lambda \rightarrow 0}\sigma_n
+						$$
+
+
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Определенный интеграл. 
+						----------------------------------
+
+						Если предел $J$ существует, не зависит от способа дробления
+						и выбора точек $\xi_k$, то он называется опеределённым интегралом от функции $f(x)$
+						по промежутку \[a, b\] и обозначается
+						$$J=\int_a^b f(x)dx$$
+						где $a$ и $b$ - постоянные, называются нижним и верхним пределами интегрирования.
+
+						
+
+
+
+					</script>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Определенный интеграл. 
+						----------------------------------
+
+						Более компактное определение определённого интеграла записывается, как
+						$$
+						J=\lim_{n \rightarrow \infty}
+						$$
+
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Свойства определённого интеграла. 
+						----------------------------------
+
+						- $$
+						\int_a^b Af(x)dx = A\int_a^b f(x)dx
+						$$
+						- $$
+						\int_a^b (f_1(x)+f_2(x))dx=
+						$$
+						$$= \int_a^b f_1(x)dx+int_a^b f_2(x)dx$$
+
+
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="text/template">
+						Свойства определённого интеграла. 
+						----------------------------------
+						
+						- $$
+						\int_a^b Af(x)dx = A\int_a^b f(x)dx
+						$$
+						- $$
+						\int_a^b (f_1(x)+f_2(x))dx=
+						$$
+						$$=int_a^b f_1(x)$$
+
+
+					</script>
+				</section>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Формула Ньютона-Лейбница
 						------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Способы вычисления интегралов
 						-----------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Примеры вычисления интегралов
 						-----------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Вычисление интегралов
 						---------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Интерполирование функции
 						------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Интерполяционные многочлены Лагранжа
 						------------------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Геометрический смысл определенного интеграла
 						--------------------------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Рассчитать площадь фигуры между кривыми
 						---------------------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Игра "Угадай площадь"
 						---------------------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Игра "Найди котиков"
 						---------------------------------------
 					</script>
 				</section>
-				<section data-markdown>
+				<section data-markdown data-markdown-separator="^Notes:">
 					<script type="text/template">
 						Игра "Найди интегралы"
 						---------------------------------------
